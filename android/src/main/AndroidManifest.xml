@@ -1,0 +1,41 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.vitanov.multiimagepicker">
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application>
+<!--        <provider-->
+<!--            android:name="com.vitanov.multiimagepickerFileProvider"-->
+<!--            android:authorities="${applicationId}.fishbunfileprovider"-->
+<!--            android:exported="false"-->
+<!--            android:grantUriPermissions="true">-->
+<!--            <meta-data-->
+<!--                android:name="android.support.FILE_PROVIDER_PATHS"-->
+<!--                android:resource="@xml/provider_paths" />-->
+<!--        </provider>-->
+
+        <activity
+            android:name=".ui.album.AlbumActivity"
+            android:label="@string/album"
+            android:theme="@style/FishBunTheme"/>
+        <activity
+            android:name=".ui.picker.PickerActivity"
+            android:theme="@style/FishBunTheme" />
+        <activity
+            android:name=".ui.detail.DetailActivity"
+            android:theme="@style/DetailViewTheme" />
+    </application>
+    <queries>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+    </queries>
+</manifest>
